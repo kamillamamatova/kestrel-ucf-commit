@@ -15,13 +15,13 @@ const ContributorsPage = () => {
             title: "Blue Origin",
             description: "Coming soon...",
             image: imageBlueOrigin,
-            link: "/contributions/BlueOrigin",
+            link: "https://www.blueorigin.com/",
         },
         {
             title: "ACM",
             description: "Coming soon...",
             image: imageACM,
-            link: "/contributions/ACM",
+            link: "https://linktr.ee/acmucf",
         },
         {
             title: "AI@UCF",
