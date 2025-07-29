@@ -10,6 +10,13 @@ import Link from "next/link";
 
 const ContributorsPage = () => {
     const cards: ContributorsCardProps[] = [
+        // Going to be separated from the other contributors
+        {
+            title: "Blue Origin",
+            description: "Coming soon...",
+            image: imageBlueOrigin,
+            link: "/contributions/BlueOrigin",
+        },
         {
             title: "ACM",
             description: "Coming soon...",
@@ -34,16 +41,10 @@ const ContributorsPage = () => {
             image: imageKnightHacks,
             link: "https://blade.knighthacks.org/",
         },
-        {
-            title: "Blue Origin",
-            description: "Coming soon...",
-            image: imageBlueOrigin,
-            link: "/contributions/BlueOrigin",
-        },
     ];
 
     return(
-        <div className = "h-fit w-full bg-gradient-to-t from-slate-700 to-slate-900">
+        <div className = "h-fit w-full bg-gradient-to-t from-slate-700 to-slate-900 pb-22">
             {/* Heading */}
             <div className = "pt-[80px] text-5xl font-bold text-center text-neutral-200 font-mono">
                 Meet the Contributors
@@ -68,28 +69,18 @@ const ContributorsPage = () => {
                 ))}
             </div>
 
+            {/* Visual Seperator */}
+            <hr className = "w-2/3 mx-auto border-slate-500 mb-10"/>
+
             {/* Card Grid */}
             <div className= "flex flex-col items-center gap-8 pt-1 px-6 sm:px-4 lg:px-8 space-y-1">
                 <h2 className = "text-3xl font-semibold font-mono text-amber-200 mb-6 text-center">Student Organizations</h2>
-                <div className = "grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center">
-                    {cards.slice(1, 3).map((card) => (
+                <div className = "grid grid-cols-1 sm:grid-cols-4 gap-8 justify-items-center">
+                    {cards.slice(1, 5).map((card) => (
                         <Link
                             href= {card.link}
                             key= {card.title}
                             className= "block transform hover:-translate-y-1 transition"
-                        >
-                            <ContributorsCard {...card} />
-                        </Link>
-                    ))}
-                </div>
-
-                {/* Bottom row of 2 cards cenetered in a 2-column grid */}
-                <div className = "grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center">
-                    {cards.slice(3).map((card) => (
-                        <Link
-                            href = {card.link}
-                            key = {card.title}
-                            className = "block transform hover:-translate-y-1 transition"
                         >
                             <ContributorsCard {...card} />
                         </Link>
